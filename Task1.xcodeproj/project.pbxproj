@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DAA09B02A05FF4C0066430A /* CallQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA09AF2A05FF4C0066430A /* CallQuestions.swift */; };
+		2DAA09B32A0604300066430A /* AnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA09B22A0604300066430A /* AnswerVC.swift */; };
+		2DAA09B62A06080E0066430A /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA09B52A06080E0066430A /* QuestionTableViewCell.swift */; };
 		2DC652442A04C7AD00360D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC652432A04C7AD00360D83 /* AppDelegate.swift */; };
 		2DC652462A04C7AD00360D83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC652452A04C7AD00360D83 /* SceneDelegate.swift */; };
-		2DC652482A04C7AD00360D83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC652472A04C7AD00360D83 /* ViewController.swift */; };
+		2DC652482A04C7AD00360D83 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC652472A04C7AD00360D83 /* QuestionVC.swift */; };
 		2DC6524B2A04C7AD00360D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC652492A04C7AD00360D83 /* Main.storyboard */; };
 		2DC6524E2A04C7AD00360D83 /* Task1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6524C2A04C7AD00360D83 /* Task1.xcdatamodeld */; };
 		2DC652502A04C7BB00360D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6524F2A04C7BB00360D83 /* Assets.xcassets */; };
@@ -17,10 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DAA09AF2A05FF4C0066430A /* CallQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallQuestions.swift; sourceTree = "<group>"; };
+		2DAA09B22A0604300066430A /* AnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerVC.swift; sourceTree = "<group>"; };
+		2DAA09B52A06080E0066430A /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		2DC652402A04C7AD00360D83 /* Task1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC652432A04C7AD00360D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DC652452A04C7AD00360D83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2DC652472A04C7AD00360D83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2DC652472A04C7AD00360D83 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
 		2DC6524A2A04C7AD00360D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DC6524D2A04C7AD00360D83 /* Task1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task1.xcdatamodel; sourceTree = "<group>"; };
 		2DC6524F2A04C7BB00360D83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,12 +66,15 @@
 			children = (
 				2DC652432A04C7AD00360D83 /* AppDelegate.swift */,
 				2DC652452A04C7AD00360D83 /* SceneDelegate.swift */,
-				2DC652472A04C7AD00360D83 /* ViewController.swift */,
+				2DC652472A04C7AD00360D83 /* QuestionVC.swift */,
 				2DC652492A04C7AD00360D83 /* Main.storyboard */,
+				2DAA09B52A06080E0066430A /* QuestionTableViewCell.swift */,
+				2DAA09B22A0604300066430A /* AnswerVC.swift */,
 				2DC6524F2A04C7BB00360D83 /* Assets.xcassets */,
 				2DC652512A04C7BB00360D83 /* LaunchScreen.storyboard */,
 				2DC652542A04C7BB00360D83 /* Info.plist */,
 				2DC6524C2A04C7AD00360D83 /* Task1.xcdatamodeld */,
+				2DAA09AF2A05FF4C0066430A /* CallQuestions.swift */,
 			);
 			path = Task1;
 			sourceTree = "<group>";
@@ -140,10 +149,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DC652482A04C7AD00360D83 /* ViewController.swift in Sources */,
+				2DAA09B32A0604300066430A /* AnswerVC.swift in Sources */,
+				2DC652482A04C7AD00360D83 /* QuestionVC.swift in Sources */,
 				2DC652442A04C7AD00360D83 /* AppDelegate.swift in Sources */,
+				2DAA09B02A05FF4C0066430A /* CallQuestions.swift in Sources */,
 				2DC6524E2A04C7AD00360D83 /* Task1.xcdatamodeld in Sources */,
 				2DC652462A04C7AD00360D83 /* SceneDelegate.swift in Sources */,
+				2DAA09B62A06080E0066430A /* QuestionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
