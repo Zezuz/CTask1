@@ -7,6 +7,11 @@
 //use api to pull info and display on screen
 //separate funcs from View Controller
 //sunday may 7
+//extract TableView from the QuestionsVC and put it into its own file like http call
+//find the bug , fix the bug
+//Create a new VC at the start that has a header label at the top to welcome the user and a menu button below that says trivia
+//extract out any models/structs needed into their own files
+//create your own folder structure for files
 
 import UIKit
 

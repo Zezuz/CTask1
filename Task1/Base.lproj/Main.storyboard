@@ -23,7 +23,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nJ2-zY-zOY" id="qYY-76-csI" customClass="QuestionTableViewCell" customModule="Task1" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSS-h3-ZTU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="questionLabel" destination="lSS-h3-ZTU" id="lmQ-Vg-qM4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,12 +46,12 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="5IC-DN-Ux4"/>
                     <connections>
                         <outlet property="QuestionTableView" destination="Ge8-xN-7ex" id="0nd-Tn-Ek8"/>
-                        <segue destination="AqJ-Yc-iAD" kind="show" id="4NE-wD-wxq"/>
+                        <segue destination="AqJ-Yc-iAD" kind="show" identifier="showAnswerSegue" id="4NE-wD-wxq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oes-ib-djN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1525" y="42"/>
+            <point key="canvasLocation" x="-1526.0869565217392" y="41.517857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oMg-Vs-uoR">
