@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D808D1D2A098EAA008F19AC /* QuestionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D808D1C2A098EAA008F19AC /* QuestionTableView.swift */; };
+		2D808D202A098FD9008F19AC /* EntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D808D1F2A098FD9008F19AC /* EntryVC.swift */; };
 		2DAA09B02A05FF4C0066430A /* CallQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA09AF2A05FF4C0066430A /* CallQuestions.swift */; };
 		2DAA09B32A0604300066430A /* AnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA09B22A0604300066430A /* AnswerVC.swift */; };
 		2DAA09B62A06080E0066430A /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA09B52A06080E0066430A /* QuestionTableViewCell.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D808D1C2A098EAA008F19AC /* QuestionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableView.swift; sourceTree = "<group>"; };
+		2D808D1F2A098FD9008F19AC /* EntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryVC.swift; sourceTree = "<group>"; };
 		2DAA09AF2A05FF4C0066430A /* CallQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallQuestions.swift; sourceTree = "<group>"; };
 		2DAA09B22A0604300066430A /* AnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerVC.swift; sourceTree = "<group>"; };
 		2DAA09B52A06080E0066430A /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				2DC652432A04C7AD00360D83 /* AppDelegate.swift */,
 				2DC652452A04C7AD00360D83 /* SceneDelegate.swift */,
 				2DC652472A04C7AD00360D83 /* QuestionVC.swift */,
+				2D808D1F2A098FD9008F19AC /* EntryVC.swift */,
+				2D808D1C2A098EAA008F19AC /* QuestionTableView.swift */,
 				2DC652492A04C7AD00360D83 /* Main.storyboard */,
 				2DAA09B52A06080E0066430A /* QuestionTableViewCell.swift */,
 				2DAA09B22A0604300066430A /* AnswerVC.swift */,
@@ -152,8 +158,10 @@
 				2DAA09B32A0604300066430A /* AnswerVC.swift in Sources */,
 				2DC652482A04C7AD00360D83 /* QuestionVC.swift in Sources */,
 				2DC652442A04C7AD00360D83 /* AppDelegate.swift in Sources */,
+				2D808D202A098FD9008F19AC /* EntryVC.swift in Sources */,
 				2DAA09B02A05FF4C0066430A /* CallQuestions.swift in Sources */,
 				2DC6524E2A04C7AD00360D83 /* Task1.xcdatamodeld in Sources */,
+				2D808D1D2A098EAA008F19AC /* QuestionTableView.swift in Sources */,
 				2DC652462A04C7AD00360D83 /* SceneDelegate.swift in Sources */,
 				2DAA09B62A06080E0066430A /* QuestionTableViewCell.swift in Sources */,
 			);
