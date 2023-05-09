@@ -12,58 +12,52 @@
 //Create a new VC at the start that has a header label at the top to welcome the user and a menu button below that says trivia
 //extract out any models/structs needed into their own files
 //create your own folder structure for files
-
 import UIKit
 
-class QuestionVC: UITableViewController {
+
+class QuestionVC: UIViewController {
     
     @IBOutlet weak var QuestionTableView: UITableView!
-    var questions: [Question] = []
-
+    //var questions: [Question] = []
+    var questionTableView: QuestionTableView? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        
+        questionTableView = Task1.QuestionTableView(frame: .zero, style: .plain)
+        view.addSubview(questionTableView!)
+
         getQuestions { questions in
-            self.questions = questions
+            self.questionTableView?.questions = questions
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.questionTableView?.reloadData()
             }
         }
     }
-    
-    // MARK: - Table view data source
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "showAnswerSegue" {
-                let answerVC = segue.destination as! AnswerVC
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    let question = questions[indexPath.row]
-                    answerVC.Answer = question.correctAnswer
-                }
-            }
-        }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath) as! QuestionTableViewCell
-        let question = questions[indexPath.row]
-        cell.configure(with: question)
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            performSegue(withIdentifier: "showAnswerSegue", sender: self)
-        }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let question = questions[indexPath.row]
-//        let correctAnswer = question.correctAnswer
-//        performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
-//    }
 }
+//import UIKit
+//
+//class QuestionVC: UITableViewController {
+//
 
-
+//    var questions: [Question] = []
+//    let tableView: UITableView = QuestionTableView(frame: .zero, style: .plain)
+//
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        getQuestions { questions in
+//            self.questions = questions
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
+//
+//
+//}
     
     
     
