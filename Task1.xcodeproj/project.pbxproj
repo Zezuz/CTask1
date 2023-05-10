@@ -76,11 +76,11 @@
 				2DC652492A04C7AD00360D83 /* Main.storyboard */,
 				2DAA09B52A06080E0066430A /* QuestionTableViewCell.swift */,
 				2DAA09B22A0604300066430A /* AnswerVC.swift */,
+				2DAA09AF2A05FF4C0066430A /* CallQuestions.swift */,
 				2DC6524F2A04C7BB00360D83 /* Assets.xcassets */,
 				2DC652512A04C7BB00360D83 /* LaunchScreen.storyboard */,
 				2DC652542A04C7BB00360D83 /* Info.plist */,
 				2DC6524C2A04C7AD00360D83 /* Task1.xcdatamodeld */,
-				2DAA09AF2A05FF4C0066430A /* CallQuestions.swift */,
 			);
 			path = Task1;
 			sourceTree = "<group>";
