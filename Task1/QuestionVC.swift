@@ -18,34 +18,36 @@ import UIKit
 
 class QuestionVC: UITableViewController {
     
-    @IBOutlet weak var QuestionTableView: UITableView!
+    @IBOutlet weak var questionTableView: QuestionTableView!
     var questions: [Question] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let viewController = QuestionVC()
+        self.questionTableView.dataSource = viewController
+        self.questionTableView.delegate = viewController
         
-        
-        QuestionTableView.dataSource = self
-        QuestionTableView.delegate = self
-        
-       
         getQuestions { questions in
             self.questions = questions
             DispatchQueue.main.async {
-                // Reload the table view data after the questions are set
-                self.QuestionTableView.reloadData()
+                self.questionTableView.reloadData()
             }
         }
         
     }
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "showQuestionSegue" {
-                let questionVC = segue.destination as! QuestionVC
-                questionVC.questions = self.questions
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showQuestionSegue" {
+            let questionVC = segue.destination as! QuestionVC
+            questionVC.questions = self.questions
         }
-
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let question = questions[indexPath.row]
+            let correctAnswer = question.correctAnswer
+            performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
+        }
+}
 //        getQuestions { questions in
 //            self.questions = questions
 //            DispatchQueue.main.async {
@@ -78,12 +80,12 @@ class QuestionVC: UITableViewController {
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //            performSegue(withIdentifier: "showAnswerSegue", sender: self)
 //        }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let question = questions[indexPath.row]
 //        let correctAnswer = question.correctAnswer
 //        performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
 //    }
-}
+
 
 
     

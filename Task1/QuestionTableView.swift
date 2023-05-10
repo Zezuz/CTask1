@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class QuestionTableView: NSObject, UITableViewDataSource, UITableViewDelegate {
+class QuestionTableView: UITableView {
     
     
     var questions: [Question] = []
@@ -25,6 +25,9 @@ class QuestionTableView: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Handle the row selection event here.
+        let question = questions[indexPath.row]
+        let correctAnswer = question.correctAnswer
+//        performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
     }
+    
 }
