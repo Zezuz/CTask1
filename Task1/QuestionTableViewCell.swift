@@ -7,13 +7,15 @@
 
 import UIKit
 
+//&quot issues still exist
 class QuestionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var questionLabel: UILabel!
     
     
     func configure(with question: Question) {
-            questionLabel.text = question.question
+        let decodedQuestion = question.question.removingPercentEncoding ?? ""
+            questionLabel.text = decodedQuestion
         }
     
 }

@@ -16,20 +16,18 @@
 
 import UIKit
 
-class QuestionVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class QuestionVC: UIViewController {
     
     @IBOutlet weak var questionTableView: QuestionTableView!
-    var questions: [Question] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questionTableView.dataSource = self
-        questionTableView.delegate = self
+        self.questionTableView.questionVC = self
         
         getQuestions { questions in
-            self.questions = questions
             DispatchQueue.main.async {
+                self.questionTableView.questions = questions
                 self.questionTableView.reloadData()
             }
         }
@@ -39,30 +37,12 @@ class QuestionVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if segue.identifier == "showAnswerSegue" {
             if let answerVC = segue.destination as? AnswerVC,
                let indexPath = questionTableView.indexPathForSelectedRow {
-                let selectedQuestion = questions[indexPath.row]
+                let selectedQuestion = self.questionTableView.questions[indexPath.row]
                 answerVC.answer = selectedQuestion.correctAnswer
             }
         }
     }
 
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath) as! QuestionTableViewCell
-        let question = questions[indexPath.row]
-        cell.configure(with: question)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let question = questions[indexPath.row]
-        let correctAnswer = question.correctAnswer
-        performSegue(withIdentifier: "showAnswerSegue", sender: correctAnswer)
-    }
-    
 }
 
 //import UIKit
