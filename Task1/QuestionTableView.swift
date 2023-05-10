@@ -17,17 +17,17 @@ class QuestionTableView: UITableView {
         return questions.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath) as! QuestionTableViewCell
         let question = questions[indexPath.row]
         cell.configure(with: question)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let question = questions[indexPath.row]
         let correctAnswer = question.correctAnswer
-//        performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
+        //performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
     }
     
 }

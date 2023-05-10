@@ -13,10 +13,10 @@
 //extract out any models/structs needed into their own files
 //create your own folder structure for files
 
+
 import UIKit
 
-
-class QuestionVC: UITableViewController {
+class QuestionVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var questionTableView: QuestionTableView!
     var questions: [Question] = []
@@ -24,9 +24,8 @@ class QuestionVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewController = QuestionVC()
-        self.questionTableView.dataSource = viewController
-        self.questionTableView.delegate = viewController
+        questionTableView.dataSource = self
+        questionTableView.delegate = self
         
         getQuestions { questions in
             self.questions = questions
@@ -34,20 +33,74 @@ class QuestionVC: UITableViewController {
                 self.questionTableView.reloadData()
             }
         }
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showQuestionSegue" {
-            let questionVC = segue.destination as! QuestionVC
-            questionVC.questions = self.questions
+        if segue.identifier == "showAnswerSegue" {
+            if let answerVC = segue.destination as? AnswerVC,
+               let indexPath = questionTableView.indexPathForSelectedRow {
+                let selectedQuestion = questions[indexPath.row]
+                answerVC.answer = selectedQuestion.correctAnswer
+            }
         }
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let question = questions[indexPath.row]
-            let correctAnswer = question.correctAnswer
-            performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
-        }
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return questions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath) as! QuestionTableViewCell
+        let question = questions[indexPath.row]
+        cell.configure(with: question)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let question = questions[indexPath.row]
+        let correctAnswer = question.correctAnswer
+        performSegue(withIdentifier: "showAnswerSegue", sender: correctAnswer)
+    }
+    
 }
+
+//import UIKit
+//
+//
+//class QuestionVC: UIViewController {
+//
+//    @IBOutlet weak var questionTableView: QuestionTableView!
+//    var questions: [Question] = []
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//
+//        questionTableView.dataSource = self
+//        questionTableView.delegate = self
+//
+//        getQuestions { questions in
+//            self.questions = questions
+//            DispatchQueue.main.async {
+//                questionTableView.reloadData()
+//            }
+//        }
+//
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showQuestionSegue" {
+//            let questionVC = segue.destination as! QuestionVC
+//            questionVC.questions = self.questions
+//        }
+//    }
+//}
+//     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            let question = questions[indexPath.row]
+//            let correctAnswer = question.correctAnswer
+//            performSegue(withIdentifier: "showAnswer", sender: correctAnswer)
+//        }
+
 //        getQuestions { questions in
 //            self.questions = questions
 //            DispatchQueue.main.async {
